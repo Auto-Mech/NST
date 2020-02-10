@@ -1,4 +1,4 @@
-# cmd conda build . -c conda
+# cmd conda build . -c
 package:
     name: nst
     version: "1.0.0"
