@@ -1,0 +1,27 @@
+NCN MP2/DZ            
+! Jobtype   
+HESSC
+! Geometry (Number of atoms. Followed by atom symbol; coords in Ang)
+3 
+N     -0.116358323140870    -0.116358323140870     1.054968198610416
+C      0.332716746831761     0.332716746831761     0.000000000000052
+N     -0.116358323140870    -0.116358323140870    -1.054968198610416
+! Masses in amu
+14.006700   
+12.011000   
+14.006700
+! Zero of Energy (Hartrees)
+-147.0596823175656      
+! Energy grid spacing , maximum grid energy in cm-1
+100. 50000.            
+! Angular momentum grid spacing, maximum grid angular momentum in hbar
+6 300             
+! Spin-orbit coupling in cm-1, and scaling factor for the state counts in ne_*.dat and nej_*.dat
+20. 3.                  
+! Scaling factor for the state counts in ne_*.dat and nej_*.dat
+3.                  
+! Debug
+T 
+! Cuts along vibrational modes (only for HESSC and HESSR)
+F
+

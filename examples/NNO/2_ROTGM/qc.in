@@ -1,0 +1,27 @@
+***,CASPT2 calculation for the singlet state                                    
+memory,1000,m                                                                   
+                                                                                
+nosym                                                                           
+geometry                                                                        
+           3
+ ANT Direct Dynamics Calculation
+N           0.2574157343       -0.1577897777        0.0000000000
+N           1.3630378518        0.0879997754       -0.0000000000
+O          -1.4409359042        0.0479093027        0.0000000000
+end                                                                             
+                                                                                
+nn(1)=1                                                                         
+nn(2)=2                                                                         
+nn(3)=3                                                                         
+                                                                                
+basis=cc-pVDZ                                                                   
+{hf,maxit=1000                                                                  
+  wf,22,1,0,0}                                                                  
+{mp2}                                                                           
+molpro_energy=energy(1)                                                         
+force                                                                           
+varsav                                                                          
+text,MOLGRAD                                                                    
+table,nn,gradx,grady,gradz                                                      
+ftyp,f,d,d,d                                                                    
+                                                                                

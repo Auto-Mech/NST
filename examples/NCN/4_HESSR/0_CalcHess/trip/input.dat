@@ -1,0 +1,21 @@
+***,CASPT2 calculation for the singlet state
+memory,1000,m
+
+nosym
+geometry
+N      1.054968198610399    -0.190497136933746    -0.000000000000000
+C     -0.000000000000041     0.444590917545206     0.000000000000000
+N     -1.054968198610434    -0.190497136933725    -0.000000000000000
+end
+
+nn(1)=1
+nn(2)=2
+nn(3)=3
+
+basis=cc-pVDZ
+{uhf,maxit=1000
+  wf,20,1,2,0}
+{ump2}
+{freq,noproject,symm=no
+ print,hessian}
+

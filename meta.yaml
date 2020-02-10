@@ -1,0 +1,16 @@
+# cmd conda build . -c pacchem
+package:
+    name: nst
+    version: "0.1.0"
+
+source:
+    path: .
+
+requirements:
+    build:
+        - cmake
+        - lapack  
+    run:
+        - cmake
+        - lapack  
+
