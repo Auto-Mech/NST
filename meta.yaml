@@ -1,4 +1,4 @@
-# cmd conda build .
+# cmd conda build . -c conda
 package:
     name: nst
     version: "0.1.0"
@@ -9,8 +9,9 @@ source:
 requirements:
     build:
         - cmake
-        - lapack  
+        - blas
+        - openblas # [linux]
     run:
         - cmake
-        - lapack  
-
+        - blas
+        - openblas # [linux]
