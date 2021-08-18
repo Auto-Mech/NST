@@ -63,7 +63,7 @@ c     coordinates variables
       double precision xxx
       double precision be
 
-c     moment-of-intertia variables
+c     moment-of-inertia variables
       double precision rot(3,3),mom(3,3),momi(3),mom1,mom2
       double precision eig(3),ap(6)
 
@@ -184,7 +184,7 @@ c     diagonalize the mom matrix
           ap(i+(j-1)*j/2)=mom(i,j)
         enddo
       enddo
-      call dsyev('v','u',3,ap,eig,rot,3,work2,info)
+      call dspev( 'v','u',3,ap,eig,rot,3,work2,info )
 
       do i=1,3
       momi(i)=0.5d0/eig(i)
@@ -237,7 +237,7 @@ c     rotate to diagonalize mom
       enddo
 
 c     rotate geometry to align with principal axes of rotation
-      write(6,*)"Rotated Geometry:"
+      write(6,*)"Rotated geometry (A)"
       do i=1,nclu
       write(6,'  (a,3f22.15)')symb(i),
      &      x(i)*autoang,y(i)*autoang,z(i)*autoang
@@ -449,7 +449,33 @@ c     Calculate the Hessians used to determine the state counts
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
 c     Calculate the Hessians used to determine the state counts
-      
+     
+c       write(6,*) "Diagonalizing the original mw Hessians"
+c       write(6,*) "Hess 1"
+c       ndim = 3*nclu
+c       nmax = 3*nclu
+c       call dsyev('v','u',ndim,mwhess1,nmax,freq,work,lwork,info)
+c       do k=1,ndim
+c         if (freq(k).gt.0.d0) then
+c             tmp=dsqrt(freq(k)/mu)
+c         else
+c             tmp=-dsqrt(-freq(k)/mu)
+c         endif
+c         write(6,150)k,freq(k),tmp*autocmi
+c       enddo
+c       write(6,*) "Hess 2"
+c       ndim = 3*nclu
+c       nmax = 3*nclu
+c       call dsyev('v','u',ndim,mwhess2,nmax,freq,work,lwork,info)
+c       do k=1,ndim
+c         if (freq(k).gt.0.d0) then
+c             tmp=dsqrt(freq(k)/mu)
+c         else
+c             tmp=-dsqrt(-freq(k)/mu)
+c         endif
+c         write(6,150)k,freq(k),tmp*autocmi
+c       enddo
+
       write (6,*)"Calculating Effective Two-State Hessians..."
       write (6,*)
 

@@ -30,7 +30,6 @@ c     Variables read from input file
       integer js,jmax
       double precision hso12
       double precision sc_qelec
-      logical idebug
       logical icut
 
 c     Loop Variables      
@@ -79,7 +78,7 @@ c     get the number of atoms
         y(i)=xx(2,i)/autoang
         z(i)=xx(3,i)/autoang
       enddo
-c     get the zero of energy
+c     get the masses
       read(5,*)
       do i=1,nclu
         read(5,*)mm(i)
@@ -94,7 +93,7 @@ c     get energy grid spacing
 c     get angular grid spacing
       read(5,*)
       read(5,*) js,jmax
-c     get so-coupling  
+c     get so-coupling
       read(5,*)
       read(5,*) hso12
 c     get scale factor for elec part'n fxn

@@ -258,6 +258,13 @@ c save the current energies (for convergence check in next cycle)
       
       write(6,100)is,pemd(n1,n1)*autokcal,pemd(n2,n2)*autokcal,eavg,
      & egap*autokcal,ediff1,ediff2,glownorm,ggnorm
+      write(6,*)"Current geometry (A)"
+      do i=1,nclu
+      write(6,'(a,3f22.15)')symb(i),
+     &      x(i)*autoang,y(i)*autoang,z(i)*autoang
+      enddo
+      write(6,*)
+
 
       write(80,*)nclu 
       write(80,*)is,egap*autokcal
