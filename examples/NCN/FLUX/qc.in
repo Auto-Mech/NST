@@ -1,0 +1,16 @@
+%mem=1GB                                                                        
+%NProcShared=10                                                                 
+#P uhf mp2/cc-pvdz                                                              
+# SCF=(xqc)                                                                     
+# Force=()                                                                      
+# int=ultrafine                                                                 
+# fchk NoSym guess=mix                                                          
+                                                                                
+comment:                                                                        
+                                                                                
+0 3                                                                             
+N           1.0549770000        0.1905031196        0.0000000000
+C           0.0000000000       -0.4446048804        0.0000000000
+N          -1.0549770000        0.1905031196        0.0000000000
+  Variables:                                                                    
+                                                                                

@@ -1,7 +1,9 @@
 project(NST Fortran)
 cmake_minimum_required(VERSION 2.8)
 
+find_package(BLAS REQUIRED)
 find_package(LAPACK REQUIRED)
+message(STATUS "Found BLAS: ${BLAS_LIBRARIES}")
 message(STATUS "Found LAPACK: ${LAPACK_LIBRARIES}")
 
 add_library(nstlibs
@@ -18,12 +20,12 @@ add_library(ddgaussianlibs
 add_executable(nst-gaussian.x
     ${PROJECT_SOURCE_DIR}/src/nst.f)
 target_link_libraries(nst-gaussian.x 
-    ${LAPACK_LIBRARIES} nstlibs ddgaussianlibs)
+    nstlibs ddgaussianlibs ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES})
 
 add_executable(nst-molpro.x
     ${PROJECT_SOURCE_DIR}/src/nst.f)
 target_link_libraries(nst-molpro.x 
-    ${LAPACK_LIBRARIES} nstlibs ddmolprolibs)
+    nstlibs ddmolprolibs ${BLAS_LIBRARIES} ${LAPACK_LIBRARIES})
 
 install(TARGETS nst-gaussian.x DESTINATION bin)
 install(TARGETS nst-molpro.x DESTINATION bin)

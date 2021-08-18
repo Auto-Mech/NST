@@ -1,7 +1,11 @@
-name: nst-env
+name: nst-env3
+
+channels:
+    - conda-forge
 
 dependencies:
     - cmake
     - gfortran_linux-64
-    - blas
-    - openblas # [linux]
+    - liblapacke
+    # - blas
+    # - openblas # [linux]
