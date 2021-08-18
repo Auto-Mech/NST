@@ -1,0 +1,31 @@
+!                                                                               
+memory,1280,m                                                                   
+! wavefunction template                                                         
+angstrom                                                                        
+geometry = {                                                                    
+           3
+ ANT Direct Dynamics Calculation
+N           0.2614379454       -0.2876932640        0.0000000000
+N           1.2935639196        0.1758497933        0.0000000000
+O          -1.3613580760        0.0979156459        0.0000000000
+}                                                                               
+set,spin=2                                                                      
+set,charge=0                                                                    
+basis=aug-cc-pvdz                                                               
+nn(1)=1                                                                         
+nn(2)=2                                                                         
+nn(3)=3                                                                         
+{rhf,,maxit=300}                                                                
+{casscf,maxit=40                                                                
+closed,5                                                                        
+wf,22,1,2,0}                                                                    
+{rs2,shift=0.20}                                                                
+                                                                                
+status,all,crash                                                                
+                                                                                
+molpro_energy=energy                                                            
+show[1,e25.15],molpro_energy                                                    
+{force,varsav}                                                                  
+text,MOLGRAD                                                                    
+table,nn,gradx,grady,gradz                                                      
+ftyp,f,d,d,d                                                                    

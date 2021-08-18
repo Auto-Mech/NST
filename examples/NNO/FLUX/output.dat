@@ -1,0 +1,84 @@
+ -------------------------------------------------
+ Request to Calculate MSX Freqs By Read'g Hessians
+ -------------------------------------------------
+
+ Rotating Geometry to Principal Axes...
+
+ Moments of intertia (cm-1)        9.65872        0.31200        0.30224
+ Symmetrized to (cm-1)             9.65872        0.30712 (x2)
+
+ Rotated geometry (A)
+N      0.261437945370314    -0.287693263982925     0.000000000000000
+N      1.293563919642214     0.175849793303324     0.000000000000000
+O     -1.361358076032199     0.097915645946777     0.000000000000000
+
+
+ Calculating the Gradients...
+
+ Energy of Rot'd MSX Geometry =   -115548.97345242562       -115548.97330182348     
+    1    1    1        0.64207
+    2    1    2       -0.00326
+    3    1    3       -0.59772
+    4    2    1       -0.39424
+    5    2    2        0.14762
+    6    2    3        0.23075
+    7    3    1        0.00000
+    8    3    2        0.00000
+    9    3    3        0.00000
+   5.8365459847676202E-002
+
+ |grad(n1)| / ( |grad(n1)| + |grad(n2)| ) =    0.54708037645352048     
+ |grad(n2)| / ( |grad(n1)| + |grad(n2)| ) =    0.45291962354647958     
+
+
+ Obtaining the Hessians...
+ Reading Hessians for Each State from Files...
+
+ Surface 1 grad(E1-E2)-projected
+   Index  Force Const(mass-scaled Eh/a0^2) Freq(cm-1)
+         1   -0.58606E-02     -393.53083
+         2   -0.30894E-17       -0.00001
+         3    0.00000E+00        0.00000
+         4    0.00000E+00        0.00000
+         5    0.00000E+00        0.00000
+         6    0.11854E-17        0.00001
+         7    0.10653E-16        0.00002
+         8    0.14591E-05        6.20942
+         9    0.10566E+00     1670.99158
+
+ Surface 2 grad(E1-E2)-projected
+   Index  Force Const(mass-scaled Eh/a0^2) Freq(cm-1)
+         1   -0.54259E-06       -3.78657
+         2   -0.34426E-17       -0.00001
+         3    0.00000E+00        0.00000
+         4    0.00000E+00        0.00000
+         5    0.00000E+00        0.00000
+         6    0.79715E-17        0.00001
+         7    0.12013E-16        0.00002
+         8    0.91449E-02      491.58557
+         9    0.10694E+00     1681.06587
+
+
+ Calculating Effective Two-State Hessians...
+
+    Index  Force Const (mass-scaled Eh/a0^2) Freq(cm-1)
+         1   -0.18348E-05       -6.96309
+         2   -0.87947E-17       -0.00002
+         3   -0.19574E-17       -0.00001
+         4    0.00000E+00        0.00000
+         5    0.00000E+00        0.00000
+         6    0.00000E+00        0.00000
+         7    0.87603E-17        0.00002
+         8    0.10290E-02      164.90020
+         9    0.10615E+00     1674.84485
+
+ MSX frequencies from Harvey Effective Hessian
+   164.90020019003168     
+   1674.8448487332887     
+
+ Writing the nej.dat and ne.dat files...
+
+
+
+
+ Exiting Program...
