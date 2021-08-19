@@ -1,0 +1,33 @@
+The optimizer is not robust, and a good guess must be provided.
+By default, the Barzilai-Borwein step-size control is used in the 
+gradient descent search. This usually leads to faster convergence, 
+but may fail in some cases. Appending the command-line argument 
+noBB to the nst.x call turns off this algorithm.
+
+
+The distributed code is set up to call Molpro.
+To use Gaussian:
+ (1) Change 'np(1) = 2' in Line 48 in dd.f to 'np(1) = 1'
+ (2) Change 'np(1) = 2' in Line 50 in dd.f to 'np(1) = 1'
+ (3) Recompile code with make
+
+Input files - edit these
+Note: These should all be in the run time directory.
+(see, e.g., examples/C2H4O/*)
+  input (std input)     ! main input file, see next section for formatting
+  qc.1                  ! gaussian template for state 1 (e.g., a triplet)
+  qc.2                  ! gaussian template for state 2 (e.g., a singlet)
+  g.x                   ! system call to Gaussian
+  m.x                   ! system call to Molpro
+
+Output files
+(see, e.g., examples/C2H4O/*)
+  output                ! standard output, prints code progress, the 
+                        ! optimized MSX geometry, rotational constants 
+                        ! and frequencies
+  fort.80               ! a Molden-style optimization movie
+  nej_lz.dat            ! NST state counts in 2D VariFlex format, using Landau-Zener transition probabilities
+  nej_delos.dat         ! NST state counts in 2D VariFlex format, using Airy formula by Delos
+  ne_lz.dat             ! NST state counts in 1D MESS format, using Landau-Zener transition probabilities
+  ne_delos.dat          ! NST state counts in 1D MESS format, using Airy formula by Delos
+

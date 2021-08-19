@@ -1,0 +1,23 @@
+***,CASPT2 calculation for the singlet state
+memory,1000,m
+
+nosym
+geometry
+GEOMETRY
+end
+
+nn(1)=1
+nn(2)=2
+nn(3)=3
+
+basis=cc-pVDZ
+{rhf,maxit=1000
+  wf,22,1,2,0}
+{rmp2}
+molpro_energy=energy(1)
+force
+varsav
+text,MOLGRAD
+table,nn,gradx,grady,gradz
+ftyp,f,d,d,d
+

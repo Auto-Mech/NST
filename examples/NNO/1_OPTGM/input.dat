@@ -1,0 +1,27 @@
+NNO MP2/DZ            
+! Jobtype   
+OPTGM
+! Geometry (Number of atoms. Followed by atom symbol; coords in Ang)
+3 
+N    0.256396468683081    -0.285880091409730     0.000000000000000
+N    1.293474549519173     0.164439273096396     0.000000000000000
+O   -1.370353345877979     0.099560120078849     0.000000000000000
+! Masses in amu
+14.003074
+14.003074
+15.9949  
+! Zero of Energy (Hartrees)
+-147.0596823175656      
+! Energy grid spacing , maximum grid energy in cm-1
+100. 50000.            
+! Angular momentum grid spacing, maximum grid angular momentum in hbar
+6 300             
+! Spin-orbit coupling in cm-1, and scaling factor for the state counts in ne_*.dat and nej_*.dat
+20. 3.                  
+! Scaling factor for the state counts in ne_*.dat and nej_*.dat
+3.                  
+! Debug
+T 
+! Cuts along vibrational modes (only for HESSC and HESSR)
+F
+
