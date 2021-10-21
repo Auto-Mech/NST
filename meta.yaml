@@ -9,11 +9,11 @@ source:
 requirements:
     build:
         - conda-forge::cmake=3.21.3
-        - conda-forge::gfortran_linux-64=11.2.0
+        - conda-forge::gfortran_linux-64=7.5.0
         - conda-forge::blas
         - conda-forge::openblas # [linux]
     run:
         - conda-forge::cmake=3.21.3
-        - conda-forge::gfortran_linux-64=11.2.0
+        - conda-forge::gfortran_linux-64=7.5.0
         - conda-forge::blas
         - conda-forge::openblas # [linux]
