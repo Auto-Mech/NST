@@ -1,7 +1,10 @@
 name: nst-env
 
+channels:
+    - conda-forge
+
 dependencies:
-    - cmake
-    - gfortran_linux-64
-    - blas
-    - openblas # [linux]
+    - conda-forge::cmake=3.21.3
+    - conda-forge::gfortran_linux-64=7.5.0
+    - conda-forge::blas
+    - conda-forge::openblas # [linux]

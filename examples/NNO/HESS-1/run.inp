@@ -1,0 +1,31 @@
+! 
+memory,1280,m
+! wavefunction template
+angstrom
+geometry = {
+N   -0.261438  -0.287693   0.000000
+N   -1.293564   0.175850   0.000000
+O    1.361358   0.097916   0.000000
+}
+set,spin=0
+set,charge=0
+basis=aug-cc-pvdz
+nn(1)=1
+nn(2)=2
+nn(3)=3
+{rhf,,maxit=300}
+{casscf,maxit=40
+closed,5
+wf,22,1,0,0}
+{rs2,shift=0.20}
+
+{freq,;print,hessian,low=5}
+put,molden,freq.molden
+status
+
+molpro_energy=energy
+show[1,e25.15],molpro_energy
+{force,varsav}
+text,MOLGRAD
+table,nn,gradx,grady,gradz
+ftyp,f,d,d,d

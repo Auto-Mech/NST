@@ -142,6 +142,7 @@ c             failed again
           else
 c           can't fix
             write(6,*)"QC failure"
+            write(6,*) ifail
             stop
           endif
         else
@@ -236,6 +237,9 @@ c                  (Not yet implemented for Gaussian)
       double precision cfloat
       double precision pemd(mnsurf,mnsurf),gpemd(3,mnclu,mnsurf,mnsurf)
       character*8 tnam
+      double precision xang, yang, zang
+      double precision autoang
+      parameter(autoang=0.52917706d0)
 
 c read template & write QC input file
       open(unit=7,file=tnam)       ! template file
@@ -244,7 +248,10 @@ c read template & write QC input file
         read(unit=7,end=100,fmt='(a80)') string
         if (string.eq."GEOMETRY") then
           do j=1,nclu
-            write(10,fmt='(a2,2x,3f20.10)')symbol(j),x(j),y(j),z(j)
+            xang = x(j) * autoang
+            yang = y(j) * autoang
+            zang = z(j) * autoang
+            write(10,fmt='(a2,2x,3f20.10)') symbol(j),xang,yang,zang
           enddo
         else
           write(10,fmt='(a80)')string
@@ -258,7 +265,7 @@ c read template & write QC input file
 c do gaussian calculation
       islp=0
  123  continue
-      call system('./g.x ')
+      call system('bash qc.x')
 
 c read the formatted checkpoint file
       open (8,file='Test.FChk')
@@ -406,7 +413,7 @@ c          write(10,*)"end"
       close(10)
 
 c do molpro calculation
-      call system('./m.x ')
+      call system('bash qc.x ')
 
 c read the formatted checkpoint file
       open (8,file='qc.out')
