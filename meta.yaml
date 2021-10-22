@@ -1,19 +1,19 @@
 # cmd conda build . -c conda-forge
 package:
     name: nst
-    version: "1.1.0"
+    version: "1.2.0"
 
 source:
     path: .
 
 requirements:
     build:
-        - conda-forge::cmake=3.21.3
+        - conda-forge::cmake=3.20.2
         - conda-forge::gfortran_linux-64=7.5.0
         - conda-forge::blas
         - conda-forge::openblas # [linux]
     run:
-        - conda-forge::cmake=3.21.3
+        - conda-forge::cmake=3.20.2
         - conda-forge::gfortran_linux-64=7.5.0
         - conda-forge::blas
         - conda-forge::openblas # [linux]
