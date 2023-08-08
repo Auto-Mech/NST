@@ -3,6 +3,9 @@
 ## Authors
 Ahren W. Jasper, Mark Pfeifle and Stephen J. Klippenstein  
 
+## Download
+We do not recommend this in-development GitHub repository to users. [Visit the Papr website for the stable version and user manual](https://tcg.cse.anl.gov/papr/codes/nst.html).
+  
 ## Functionality
 (1) refine the geometry of a good MSX (often called MECP) guess,  
 (2) compute Landau-Zener NST (often called NA TST) rates, and  
